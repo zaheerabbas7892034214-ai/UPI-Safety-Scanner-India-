@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UPI सुरक्षा स्कैनर</string>
+    
+    <!-- Home Screen -->
+    <string name="home_title">UPI सुरक्षा स्कैनर</string>
+    <string name="scan_button">QR कोड स्कैन करें</string>
+    <string name="daily_scans_remaining">दैनिक स्कैन शेष: %d/10</string>
+    <string name="unlimited_scans">असीमित स्कैन (प्रो)</string>
+    <string name="go_pro">प्रो खरीदें</string>
+    <string name="scan_limit_reached">दैनिक स्कैन सीमा पूर्ण। असीमित स्कैन के लिए प्रो में अपग्रेड करें!</string>
+    
+    <!-- Scanner Screen -->
+    <string name="scanner_title">QR कोड स्कैन करें</string>
+    <string name="point_camera">कैमरा QR कोड पर इंगित करें</string>
+    <string name="toggle_flash">फ्लैश टॉगल करें</string>
+    <string name="scanning">स्कैन किया जा रहा है…</string>
+    
+    <!-- Result Screen -->
+    <string name="scan_result">स्कैन परिणाम</string>
+    <string name="payee_address">प्राप्तकर्ता पता (VPA)</string>
+    <string name="payee_name">प्राप्तकर्ता नाम</string>
+    <string name="amount">राशि</string>
+    <string name="transaction_note">लेनदेन नोट</string>
+    <string name="risk_assessment">जोखिम मूल्यांकन</string>
+    <string name="risk_safe">सुरक्षित</string>
+    <string name="risk_warning">चेतावनी</string>
+    <string name="risk_danger">खतरा</string>
+    <string name="proceed">भुगतान के लिए आगे बढ़ें</string>
+    <string name="cancel">रद्द करें</string>
+    
+    <!-- Risk Messages -->
+    <string name="risk_suspicious_vpa">संदिग्ध VPA पैटर्न का पता चला</string>
+    <string name="risk_name_mismatch">प्राप्तकर्ता नाम बेमेल का पता चला</string>
+    <string name="risk_blacklisted">यह VPA ब्लैकलिस्ट में है</string>
+    <string name="risk_suspicious_url">संदिग्ध URL का पता चला</string>
+    
+    <!-- History Screen -->
+    <string name="history_title">स्कैन इतिहास</string>
+    <string name="search_history">इतिहास खोजें…</string>
+    <string name="export_csv">CSV निर्यात करें</string>
+    <string name="clear_history">इतिहास साफ़ करें</string>
+    <string name="no_history">कोई स्कैन इतिहास उपलब्ध नहीं</string>
+    <string name="history_limit_free">अंतिम 20 स्कैन देख रहे हैं (मुफ्त)। पूर्ण इतिहास के लिए प्रो में अपग्रेड करें।</string>
+    <string name="export_pro_only">CSV निर्यात एक प्रो सुविधा है</string>
+    
+    <!-- Paywall Screen -->
+    <string name="paywall_title">प्रो में अपग्रेड करें</string>
+    <string name="paywall_subtitle">सभी प्रीमियम सुविधाएँ अनलॉक करें</string>
+    <string name="feature_unlimited_scans">असीमित QR स्कैन</string>
+    <string name="feature_full_history">पूर्ण स्कैन इतिहास</string>
+    <string name="feature_export_csv">CSV के रूप में इतिहास निर्यात करें</string>
+    <string name="feature_no_ads">विज्ञापन-मुक्त अनुभव</string>
+    <string name="subscribe_now">अभी सदस्यता लें - ₹199/वर्ष</string>
+    <string name="restore_purchases">खरीदारी पुनर्स्थापित करें</string>
+    <string name="terms_privacy">सेवा की शर्तें | गोपनीयता नीति</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="language">भाषा</string>
+    <string name="english">English</string>
+    <string name="hindi">हिंदी</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="terms_service">सेवा की शर्तें</string>
+    <string name="about">के बारे में</string>
+    <string name="version">संस्करण %s</string>
+    
+    <!-- Bottom Navigation -->
+    <string name="nav_home">होम</string>
+    <string name="nav_history">इतिहास</string>
+    <string name="nav_settings">सेटिंग्स</string>
+    
+    <!-- Splash Screen -->
+    <string name="loading">लोड हो रहा है…</string>
+    <string name="verifying_entitlement">सदस्यता सत्यापित कर रहे हैं…</string>
+    
+    <!-- Billing Messages -->
+    <string name="billing_error">बिलिंग त्रुटि हुई</string>
+    <string name="purchase_successful">खरीदारी सफल!</string>
+    <string name="purchase_cancelled">खरीदारी रद्द की गई</string>
+    <string name="restore_successful">खरीदारी सफलतापूर्वक पुनर्स्थापित</string>
+    <string name="restore_failed">पुनर्स्थापित करने के लिए कोई खरीदारी नहीं मिली</string>
+    
+    <!-- Permissions -->
+    <string name="camera_permission_required">QR कोड स्कैन करने के लिए कैमरा अनुमति आवश्यक है</string>
+    <string name="grant_permission">अनुमति दें</string>
+    
+    <!-- Common -->
+    <string name="ok">ठीक है</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    <string name="close">बंद करें</string>
+    <string name="error">त्रुटि</string>
+    <string name="success">सफलता</string>
+    <string name="confirm">पुष्टि करें</string>
+</resources>
