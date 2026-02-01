@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withContext
 import kotlin.coroutines.resume
 
 class BillingRepository(private val context: Context) {
@@ -83,37 +84,35 @@ class BillingRepository(private val context: Context) {
         }
     }
     
-    suspend fun launchPurchaseFlow(activity: Activity): Boolean = suspendCancellableCoroutine { continuation ->
-        kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.Main).launch {
-            val productDetails = queryProductDetails()
-            
-            if (productDetails == null) {
-                _billingError.value = "Product not available"
-                continuation.resume(false)
-                return@launch
-            }
-            
-            val offerToken = productDetails.subscriptionOfferDetails?.firstOrNull()?.offerToken
-            
-            if (offerToken == null) {
-                _billingError.value = "Subscription offer not available"
-                continuation.resume(false)
-                return@launch
-            }
-            
-            val productDetailsParamsList = listOf(
-                BillingFlowParams.ProductDetailsParams.newBuilder()
-                    .setProductDetails(productDetails)
-                    .setOfferToken(offerToken)
-                    .build()
-            )
-            
-            val billingFlowParams = BillingFlowParams.newBuilder()
-                .setProductDetailsParamsList(productDetailsParamsList)
+    suspend fun launchPurchaseFlow(activity: Activity): Boolean {
+        val productDetails = queryProductDetails()
+        
+        if (productDetails == null) {
+            _billingError.value = "Product not available"
+            return false
+        }
+        
+        val offerToken = productDetails.subscriptionOfferDetails?.firstOrNull()?.offerToken
+        
+        if (offerToken == null) {
+            _billingError.value = "Subscription offer not available"
+            return false
+        }
+        
+        val productDetailsParamsList = listOf(
+            BillingFlowParams.ProductDetailsParams.newBuilder()
+                .setProductDetails(productDetails)
+                .setOfferToken(offerToken)
                 .build()
-            
+        )
+        
+        val billingFlowParams = BillingFlowParams.newBuilder()
+            .setProductDetailsParamsList(productDetailsParamsList)
+            .build()
+        
+        return withContext(kotlinx.coroutines.Dispatchers.Main) {
             val billingResult = billingClient.launchBillingFlow(activity, billingFlowParams)
-            continuation.resume(billingResult.responseCode == BillingClient.BillingResponseCode.OK)
+            billingResult.responseCode == BillingClient.BillingResponseCode.OK
         }
     }
     
